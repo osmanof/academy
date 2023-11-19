@@ -1,0 +1,1 @@
+import "./formTeacher.js";

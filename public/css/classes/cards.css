@@ -1,0 +1,113 @@
+.card {
+    width: 800px;
+    box-shadow: 0px 4px 4px rgb(174 174 174 / 25%);
+    border-radius: 8px;
+    height: 149px;
+}
+
+.card:last-child {
+    margin-bottom: 10px;
+}
+
+.card__info {
+    display: flex;
+    background-color: #f8f8f8;
+    font-family: "MontserratMD";
+    padding: 36px 52px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.card__info:hover {
+    background-color: #fafafa;
+}
+
+.card__info:active {
+    background-color: #fdfdfd;
+}
+
+.card__info__class-data__title {
+    font-family: "MontserratSB";
+}
+
+.card__info__class-data {
+    width: 45%;
+}
+
+.card__info__class-info {
+    width: 55%;
+}
+
+.card__info__class-data, .card__info__class-info {
+    display: grid;
+    gap: 17px;
+}
+
+.card__footer {
+    display: flex;
+    background-color: #f2f2f2;
+    border-radius: 0 0 8px 8px;
+    padding: 12px 25px;
+    justify-content: flex-end;
+}
+
+.card__info__class-data__title {
+    font-size: 30px;
+}
+
+.card__info__class-info, .card__info__class-data__students {
+    font-size: 19px;
+}
+
+.card__info__class-info__score span {
+    color: #09A606;
+    font-size: 23px;
+}
+
+.card__info__class-info__score span.bad {
+    color: #a63306;
+    font-size: 23px;
+}
+
+.card__info__class-data__students span, .card__info__class-info__tutor span {
+    font-family: "MontserratLG";
+}
+
+.card__footer .button-open {
+    cursor: pointer;
+    font-family: "MontserratMD";
+    padding: 7px 20px;
+    border-radius: 8px;
+    color: #6FB7DF;
+    border: 2px solid #6FB7DF;
+    user-select: none;
+}
+
+.card__footer .button-open:hover {
+    color: white;
+    background: #6FB7DF;
+}
+
+.card__footer .button-open:active {
+    color: white;
+    background: #8bc3e1;
+    border-color: #8bc3e1;
+}
+
+.cards {
+    display: grid;
+    gap: 20px;
+}
+
+.cards__block {
+    overflow: scroll;
+    height: 663px;
+}
+
+.card:hover {
+    box-shadow: 0px 2px 4px rgb(174 174 174 / 25%);
+}
+
+.card:active {
+    box-shadow: 0px 1px 4px rgb(174 174 174 / 25%);
+}

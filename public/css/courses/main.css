@@ -1,0 +1,108 @@
+@import url("courses-list.css");
+
+.form-field {
+    width: 295px;
+    display: flex;
+    justify-content: right;
+}
+
+.form-field input {
+    width: 250px;
+}
+
+.form-text {
+    width: 196px;
+    user-select: none;
+}
+
+.choose_color-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.color-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+}
+
+.color-circle {
+    padding: 24px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.color-circle.chosen, .color-circle.chosen:hover {
+    border: 3px solid rgb(111, 111, 111);
+    padding: 26px;
+}
+
+.color-circle:hover {
+    border: 3px solid rgb(237, 237, 237);
+}
+
+
+.color-circle.color_1 {
+    background-color: var(--color_1);
+}
+
+.color-circle.color_2 {
+    background-color: var(--color_2);
+}
+
+.color-circle.color_3 {
+    background-color: var(--color_3);
+}
+
+.color-circle.color_4 {
+    background-color: var(--color_4);
+}
+
+.color-circle.color_5 {
+    background-color: var(--color_5);
+}
+
+.color-circle.color_6 {
+    background-color: var(--color_6);
+}
+
+.color-circle.color_7 {
+    background-color: var(--color_7);
+}
+
+.color-circle.color_8 {
+    background-color: var(--color_8);
+}
+
+.create-course__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17px;
+}
+
+.create-course__button {
+    background: #5689c1;
+    padding: 15px 30px;
+    border-radius: 100px;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+    text-shadow: 0.7px 0.7px 0px rgba(0, 0, 0, 0.25);
+}
+
+.create-course__button:hover {
+    background: #8ab0d7;
+}
+
+.create-course__button:active {
+    background: #8fb7df;
+}
+
+.content__data {
+    width: 597px;
+}

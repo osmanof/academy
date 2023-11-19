@@ -1,0 +1,45 @@
+.form {
+    display: grid;
+    gap: 25px;
+}
+
+.form-row {
+    display: flex;
+    font-family: 'MontserratMD';
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-text {
+    width: 87px;
+    user-select: none;
+}
+
+.form-field {
+    width: 426px;
+}
+
+.form-field input {
+    outline: none;
+    padding: 13px 18px;
+    background: #FFFFFF;
+    border: 1px solid #EDEDED;
+    border-radius: 7px;
+    padding: 8px 12px;
+    font-family: "MontserratLG";
+    width: 400px;
+}
+
+.form-text span {
+    color: red;
+}
+
+.form-field select {
+    padding: 10px 15px;
+    width: 276px;
+    border-radius: 8px;
+    font-family: "MontserratMD";
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #EDEDED;
+}

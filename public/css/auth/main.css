@@ -1,0 +1,30 @@
+@import url("../form.css");
+@import url("../modal.css");
+
+
+html, body, .container {
+    margin: 0;
+    height: 100%;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 312px;
+    height: 77px;
+    background-image: url('../../images/logo/academy.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-field {
+    width: 121px !important;
+    font-size: 30px;
+}

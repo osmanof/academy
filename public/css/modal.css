@@ -1,0 +1,203 @@
+.modal-window {
+    width: 648px;
+    height: 452px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 13px;
+    background: #FFFFFF;
+    border: 1px solid #F8F8F8;
+    box-shadow: 3px 6px 76px -6px rgba(0, 0, 0, 0.08);
+}
+
+.modal-window__wrapper {
+    display: grid;
+    height: 100%;
+}
+
+.modal-window__header {
+    padding: 16px 34px;
+    background: #FEFEFE;
+    border: 1px solid #F8F8F8;
+    border-radius: 11px 11px 0 0;
+    font-family: 'MontserratSB';
+    font-size: 18px;
+    user-select: none;
+    align-self: flex-start;
+}
+
+.modal-window__content {
+    align-self: center;
+    height: 290px;
+    padding: 13px 34px;
+}
+
+.modal-window__footer {
+    display: flex;
+    padding: 8.75px 34px;
+    background: #FEFEFE;
+    border: 1px solid #F8F8F8;
+    border-radius: 0 0 11px 11px;
+    user-select: none;
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
+.modal-window__footer .button {
+    cursor: pointer;
+    background: #6FB7DF;
+    border-radius: 22px;
+    padding: 9px 30px;
+    font-family: 'MontserratSB';
+    text-shadow: 0.7px 0.7px 0px rgba(0, 0, 0, 0.25);
+    color: white;
+}
+
+.modal-window__footer .button:hover {
+    background: #81bcdb;
+}
+
+.modal-window__footer .button:active {
+    background: #8ebfda;
+}
+
+.choose-role__modal {
+    width: 510px;
+    height: 431px;
+}
+
+.choose-role__modal-content {
+    display: flex;
+    height: 88px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.choose-role__button {
+    cursor: pointer;
+    user-select: none;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-family: "MontserratSB";
+    border-radius: 2cm;
+    color: white;
+    text-shadow: 0.7px 0.7px 0px rgba(0, 0, 0, 0.25);
+}
+
+.choose-role__button.teacher {
+    background: #c84545;
+}
+
+.choose-role__button.student {
+    background: #3c7dbc;
+}
+
+.choose-role__button.teacher:hover {
+    background: #c67272;
+}
+
+.choose-role__button.student:hover {
+    background: #7092b5;
+}
+
+.choose-role__button.teacher:active {
+    background: #c29393;
+}
+
+.choose-role__button.student:active {
+    background: #6c96c0;
+}
+
+.welcome__text {
+    text-align: center;
+}
+
+.teacher-login__modal {
+    height: 350px;
+}
+
+.teacher-login__modal__content {
+    height: 160px;
+}
+
+.form__link {
+    font-family: "MontserratLG";
+    color: rgb(123, 123, 123);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form__link a {
+    color: rgb(89, 89, 89);
+}
+
+.form__link a:hover {
+    color: rgb(135, 135, 135);
+}
+.form__link a:active {
+    color: rgb(199, 199, 199);
+}
+
+.teacher-register__modal {
+    width: 648px;
+    height: 524px;
+}
+
+.teacher-register__modal__content {
+    height: 340px;
+}
+
+.block__title {
+    text-align: center;
+    font-family: 'MontserratSB';
+    color: #454545;
+    font-size: 20px;
+}
+
+.login__button {
+    background: #e5e5e5;
+    padding: 9px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: 'MontserratMD';
+    user-select: none;
+    cursor: pointer;
+}
+
+.login__button:hover {
+    background: #ededed;
+}
+
+.login__button:active {
+    background: #f3f3f3;
+}
+
+.block__or {
+    font-size: 15px;
+    color: #454545;
+    text-align: center;
+    font-family: 'MontserratLG';
+}
+
+.block__or span {
+    position: relative;
+    bottom: 19px;
+    background: white;
+    padding: 0 26px;
+}
+
+.block__or hr {
+    width: 240px;
+    border-collapse: collapse;
+    border: 0.1px solid;
+    border-color: #bfbfbf;
+}
+
+.student-register__modal {
+    height: 616px;
+}
+
+.student-register__modal__content {
+    align-self: center;
+    height: 420px;
+    padding: 13px 34px;
+}

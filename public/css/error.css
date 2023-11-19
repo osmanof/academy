@@ -1,0 +1,14 @@
+.error-message__block {
+    position: absolute;
+    background-color: #f1f1f1;
+    top: -55px;
+    right: 30px;
+    padding: 16px 37px;
+    border: 1px solid #dedede;
+    font-family: 'Montserratmd';
+    font-size: 0.9em;
+    border-radius: 8px 0 8px 8px;
+    user-select: none;
+    opacity: 0;
+    display: none;
+}

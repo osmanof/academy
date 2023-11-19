@@ -1,0 +1,57 @@
+.form-field {
+    width: 295px;
+    display: flex;
+    justify-content: right;
+}
+
+.form-field input {
+    width: 250px;
+}
+
+.form-text {
+    width: 196px;
+    user-select: none;
+}
+
+.deadline-input {
+    display: flex;
+    justify-content: space-between;
+    width: 275px;
+}
+
+input[name="deadline_date"], input[name="deadline_time"] {
+    width: auto;
+}
+
+.add-thema__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17px;
+}
+
+.add-thema__button {
+    background: #5689c1;
+    padding: 15px 30px;
+    border-radius: 100px;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+    text-shadow: 0.7px 0.7px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 14px;
+}
+
+
+.add-thema__button:hover {
+    background: #8ab0d7;
+}
+
+.add-thema__button:active {
+    background: #8fb7df;
+}
+
+.course-title {
+    font-family: 'MontserratLG';
+    font-size: 0.6em;
+    color: grey;
+}
