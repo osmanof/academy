@@ -3,6 +3,8 @@
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\ThemaController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +29,9 @@ Route::post('/classes', [ClassController::class, 'createClass']) -> name("cclass
 
 Route::get('/classes/{classcode}', [ClassController::class, 'class']);
 Route::get('/courses/{course_id}', [CourseController::class, 'course']);
+
+Route::get('/themas/{thema_id}', [ThemaController::class, 'index']);
+Route::get('/themas/{thema_id}/new-task', [TaskController::class, 'newTask']);
 
 Route::post('/courses/{classcode}', [CourseController::class, 'createThema']);
 

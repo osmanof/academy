@@ -1,0 +1,61 @@
+@import url("reset.css");
+
+
+p {
+  padding-bottom: 24px;
+}
+
+b {
+  font-weight: bold;
+}
+
+i {
+  font-style: italic;
+}
+
+ul,
+ol {
+  margin-left: 40px;
+}
+
+#editor {
+  width: 800px;
+  margin: 50px auto 50px auto;
+  padding: 7px 20px 20px 20px;
+  border: 1px solid #464646;
+  border-radius: 10px;
+  background: #fafafa;
+  font: 200 24px 'Roboto', Helvetica, sans-serif;
+  color: #222;
+}
+
+#toolbar {
+  margin-left: -20px;
+  margin-right: -20px;
+  border-bottom: 1px solid #464646;
+  padding: 8px 20px;
+  overflow: hidden;
+}
+
+#page {
+  padding-top: 30px;
+  min-height: 600px;
+  outline: none;
+}
+
+.icon {
+  float: left;
+  height: 30px;
+  width: 40px;
+  margin-right: 10px;
+  background: #fafafa;
+  font-size: 0.8rem;
+  color: #464646;
+  text-align: center;
+  cursor: pointer;
+}
+
+.icon:hover {
+  border-color: #3e7086;
+  color: #3e7086;
+}

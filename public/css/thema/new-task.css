@@ -1,0 +1,126 @@
+@import url("wysiwyg.css");
+
+.task__form {
+    display: grid;
+    gap: 30px;
+}
+
+.task__form__row-title {
+    font-size: 1.3em;
+    font-family: "MontserratMD";
+}
+
+.task__form__row-title span {
+    color: red;
+}
+
+.task__form__row {
+    display: grid;
+    gap: 15px;
+}
+
+.task__form__row input {
+    outline: none;
+    padding: 13px 18px;
+    background: #FFFFFF;
+    border: 1px solid #EDEDED;
+    border-radius: 7px;
+    font-family: "MontserratLG";
+    width: calc(100% - 50px);
+}
+
+.task__sample-table {
+    border-collapse: collapse;
+    width: calc(100% - 14px);
+    border: 1px solid #cacaca;
+}
+
+.task__sample-table td,
+.task__sample-table th {
+    width: 50%;
+    padding: 8px 15px;
+    text-align: left;
+    border: 1px solid #cacaca;
+}
+
+.task__sample-table td {
+    font-family: "CMU-R";
+    vertical-align: top;
+}
+
+.task__sample-table th {
+    width: 50%;
+    padding: 8px 15px;
+    font-family: "CMU-B";
+}
+
+.task__form__row-content hr {
+    margin: 0;
+    width: calc(100% - 16px);
+    border: 1px solid #cacaca;
+}
+
+.task__sample-table_add-row {
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 14px);
+    position: relative;
+    bottom: 10px;
+    opacity: 0;
+    transition: .1s;
+}
+
+.task__sample-table_add-row:hover {
+    opacity: 1;
+}
+
+.task__sample-table_add-row_button {
+    cursor: pointer;
+    background: #939393;
+    padding: 6px;
+    border-radius: 100%;
+}
+
+.task__sample-table_add-row_button:hover {
+    background: rgb(166 166 166);
+}
+
+.task__sample-table_add-row_button:active {
+    background: rgb(200, 200, 200);
+}
+
+
+.task__sample-table_add-row_button-icon {
+    background-image: url("../../images/signs/bnplus.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 7px;
+}
+
+.create-task_button {
+    position: absolute;
+    bottom: 70px;
+    right: 134px;
+    background-color: rgb(36, 103, 141);
+    color: white;
+    padding: 13px 21px;
+    font-family: "MontserratMD";
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.create-task_button:hover {
+    background-color: rgb(65, 134, 174);
+}
+
+.create-task_button:active {
+    background-color: rgb(87, 147, 181);
+}
+
+.block__title {
+    
+}
+
+

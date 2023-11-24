@@ -11,6 +11,7 @@ class Thema extends Model
 
     protected $fillable = [
         'title',
+        'show',
         'deadline_date',
         'deadline_time',
         'type',

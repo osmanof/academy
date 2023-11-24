@@ -56,11 +56,19 @@ class CourseController extends Controller
     }
 
     public function course(string $id) {
-        $course = DB::table('courses')->where("id", "=", $id)->first();
+        $courses_table = DB::table('courses');
+        $themas_table = DB::table('themas')->where("course_id", "=", $id);
+        $count = $themas_table->count();
+
+        $countText = $count ? strval($count) . " курс" . naturalText($count) : "";
+        $course = $courses_table->where("id", "=", $id)->first();
 
         return view("course", [
             "user" => Auth::user(),
-            "title" => $course->title
+            "title" => $course->title,
+            "countText" => $countText,
+            "themas" => $themas_table->get(),
+            "count" => $count
         ]);
     }
 
@@ -92,6 +100,7 @@ class CourseController extends Controller
 
         $thema = Thema::create([
             'title' => $title,
+            'show' => false,
             'deadline_date' => $date,
             'deadline_time' => $time,
             'type' => $type,

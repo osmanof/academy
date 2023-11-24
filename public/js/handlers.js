@@ -4,10 +4,15 @@ import {
 } from "./modal.js";
 
 function clickButtonHandler() {
-    console.log("as");
     $(".button-new").click(function () {
-        console.log("hey!");
         showModal();
+    });
+}
+
+function clickTaskButtonHandler() {
+    $(".button-new").click(function () {
+        const currentLink = window.location.pathname;
+        window.location.href = currentLink + "/new-task";
     });
 }
 
@@ -69,24 +74,76 @@ function colorBlockButtonHandler() {
     const buttons = $(".color-circle");
 
     for (let index = 0; index < buttons.length; index++) {
-        const element = buttons[index];
+        const element = $(buttons[index]);
         console.log(element);
 
-        $(element).click(function () {
+        element.click(function () {
             $(".color-circle").removeClass("chosen");
-            $(element).addClass("chosen");
+            element.addClass("chosen");
         });
     }    
 }
 
+function themaButtonHandler() {
+    const buttons = $(".thema-info__block");
+
+    for (let index = 0; index < buttons.length; index++) {
+        const element = $(buttons[index]);
+        const id = element.attr("data-id");
+        console.log(element);
+
+        element.click(function () {
+            window.location.href = "/themas/" + id;
+        });
+    }
+}
+
+function lockButtonHandler() {
+    const buttons = $(".thema-lock__block");
+
+    for (let index = 0; index < buttons.length; index++) {
+        const element = $(buttons[index]);
+        console.log(element);
+
+        element.click(function () {
+            if (element.hasClass("locked")) {
+                $(element).removeClass("locked");
+                $(element).addClass("unlocked");
+                $(element).attr("title", "Скрыть");
+            } else {
+                $(element).removeClass("unlocked");
+                $(element).addClass("locked");  
+                $(element).attr("title", "Показать");
+            }
+            
+        });
+    }
+}
+
+function createTaskButtonHandler(action) {
+    $(".button-new").click(action);
+}
+
+function createNewSamplesTableRowButtonHandler(action) {
+    $(".task__sample-table_add-row_button").click(function () {
+        action();
+        var block = $(".content__data-left");
+        block.scrollTop(block.prop('scrollHeight'));
+    });
+}
+
 export {
+    lockButtonHandler,
+    themaButtonHandler,
     clickButtonHandler,
     classButtonHandler,
     courseButtonHandler,
     setClassButtonHandler,
+    clickTaskButtonHandler,
     colorBlockButtonHandler,
     clickCloseButtonHandler,
     generateCodeButtonHandler,
     createCourseButtonHandler,
-    clickCreateThemaButtonHandler
+    clickCreateThemaButtonHandler,
+    createNewSamplesTableRowButtonHandler
 }
