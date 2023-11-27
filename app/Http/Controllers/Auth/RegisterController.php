@@ -60,12 +60,16 @@ class RegisterController extends Controller
         $data = $request->all();
 
         $email = $data["email"];
-        $password = $data["pass"];
+        $password = $data["password"];
 
         if (Auth::attempt(["email"=> $email,"password"=> $password])) {
-            return redirect("/");
+            return json_encode([
+                "status" => 200
+            ]);
         } else {
-            return "к сожалению";
+            return json_encode([
+                "status" => 500
+            ]);
         }
     }
 

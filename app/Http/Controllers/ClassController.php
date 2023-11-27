@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Classroom;
+use App\Models\Course;
+use App\Models\Thema;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -79,12 +81,36 @@ class ClassController extends Controller
     }
 
     public function homepage(Request $request) {
-        if (Auth::user()) {
-            $role = Auth::user()->role;
+        $user = Auth::user();
+        if ($user) {
+            $role = $user->role;
             if ($role == 0) {
                 return redirect("classes");
             } elseif ($role == 1) {
-                return "пока тут ничего нет, сорян :(";
+                $code = $user->code;
+                $class = Classroom::where("code", "=", $code)->first();
+                $course_id = $class->course_id;
+
+                if ($course_id) {
+                    $themas = Thema::where("course_id", "=", $course_id)->where("show", "=", "1")->get();
+                    $course = Course::where("id", "=", $course_id)->first();
+
+                    $course_title = $course->title;
+
+                    $count = $themas->count();
+    
+                    $count_text = $count ? strval($count) . " урок" . naturalText($count) : "";
+    
+                    return view("student.themas", [
+                        "user" => $user,
+                        "themas" => $themas,
+                        "count_text" => $count_text,
+                        "course_title" => $course_title
+                    ]);
+                } else {
+                    return "Учитель не назначил тему.";
+                }
+
             }
     
         } else {
@@ -93,9 +119,14 @@ class ClassController extends Controller
     }
 
     public function class(Request $request, string $classcode) {
-        $classrooms = Classroom::where("tutor_id", "=", Auth::user()->id);
+        $user = Auth::user();
+        $user_id = $user->id;
+
+        $classrooms = Classroom::where("tutor_id", "=", $user_id);
         $classroom = $classrooms->where("code", "=", $classcode);
         $classroom_data = $classroom->first();
+
+        $courses = DB::table('courses')->where("tutor_id", "=", $user_id)->get();
 
         $students = User::where("code", "=", $classcode)->get();
         $students_array = [];
@@ -116,13 +147,39 @@ class ClassController extends Controller
             return view("class", [
                 "user" => Auth::user(),
                 "ctitle" => $classroom_data->title,
+                "course_id" => $classroom_data->course_id,
                 "ccode" => $classcode,
-                "students" => $students_array
+                "students" => $students_array,
+                "courses" => $courses
             ]);
 
         } else {
             return "Ошибка!";
         }
+    }
+
+    public function changeCourse(Request $request, string $class) {
+        $course_id = intval($request->course_id);
+        $user = Auth::user();
+        $user_id = $user->id;
+
+        $course = DB::table('courses')->where("id", "=", $course_id)->where("tutor_id", "=", $user_id);
+
+        if ($course->exists() || !$course_id) {
+            $classroom = DB::table('classrooms')->where("code", "=", $class);
+
+            $classroom->update([
+                "course_id" => $course_id
+            ]);
+
+            return json_encode([
+                "status" => 500
+            ]);
+        }
+
+        return json_encode([
+            "status" => 200
+        ]);
     }
 
 }

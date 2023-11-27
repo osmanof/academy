@@ -3,6 +3,11 @@ import {
     closeModal
 } from "./modal.js";
 
+import {
+    setThemaAccess
+} from "./course/requests.js";
+
+
 function clickButtonHandler() {
     $(".button-new").click(function () {
         showModal();
@@ -103,19 +108,22 @@ function lockButtonHandler() {
 
     for (let index = 0; index < buttons.length; index++) {
         const element = $(buttons[index]);
-        console.log(element);
 
         element.click(function () {
+            const id = element.attr("data-id");
             if (element.hasClass("locked")) {
-                $(element).removeClass("locked");
-                $(element).addClass("unlocked");
-                $(element).attr("title", "Скрыть");
+                setThemaAccess(id, 1, function () {
+                    element.removeClass("locked");
+                    element.addClass("unlocked");
+                    element.attr("title", "Скрыть");
+                });
             } else {
-                $(element).removeClass("unlocked");
-                $(element).addClass("locked");  
-                $(element).attr("title", "Показать");
+                setThemaAccess(id, 0, function () {
+                    element.removeClass("unlocked");
+                    element.addClass("locked");  
+                    element.attr("title", "Показать");
+                });
             }
-            
         });
     }
 }
@@ -132,6 +140,15 @@ function createNewSamplesTableRowButtonHandler(action) {
     });
 }
 
+function setCourseSelectHandler(action) {
+    const setCourseSelect = $('select[name="set_course"]');
+    setCourseSelect.change(function () {
+        const value = setCourseSelect.val();
+
+        action(value);
+    });
+}
+
 export {
     lockButtonHandler,
     themaButtonHandler,
@@ -139,6 +156,7 @@ export {
     classButtonHandler,
     courseButtonHandler,
     setClassButtonHandler,
+    setCourseSelectHandler,
     clickTaskButtonHandler,
     colorBlockButtonHandler,
     clickCloseButtonHandler,

@@ -98,3 +98,17 @@
     font-family: "MontserratLG";
 }
 
+.content__sections {
+    display: grid;
+    gap: 34px;
+}
+
+.content__section {
+    display: grid;
+    gap: 14px;
+}
+
+.section__title {
+    font-family: 'MontserratMD';
+    font-size: 24px;
+}

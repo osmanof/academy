@@ -77,7 +77,7 @@ class CourseController extends Controller
         $title = $request->title;
         $color = $request->color;
         $accessibility = $request->accessibility;
-        $id = $request->id;
+        $id = $user->id;
 
         $classroom = Course::create([
             'title' => $title,
@@ -110,5 +110,25 @@ class CourseController extends Controller
         return json_encode([
             "status" => 200
         ]);
+    }
+
+    public function setThemaAccess(Request $request, string $id) {
+        $thema = DB::table('themas')->where("course_id", "=", $id)->where("id", "=", $request->thema_id);
+        $show = $request->type;
+
+        if ($thema->exists()) {
+            $thema->update([
+                "show" => intval($show)
+            ]);
+
+            return json_encode([
+                "show" => $show,
+                "status" => 200
+            ]);            
+        }
+
+        return json_encode([
+            "status" => 500
+        ]); 
     }
 }

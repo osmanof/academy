@@ -201,3 +201,8 @@ body, html {
     padding: 0 34px;
 }
 
+.course-title {
+    font-family: 'MontserratLG';
+    font-size: 0.6em;
+    color: grey;
+}

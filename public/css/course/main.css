@@ -1,4 +1,4 @@
-@import url("themas.css");
+@import url("../themas.css");
 
 .form-field {
     width: 295px;
@@ -50,10 +50,4 @@ input[name="deadline_date"], input[name="deadline_time"] {
 
 .add-thema__button:active {
     background: #8fb7df;
-}
-
-.course-title {
-    font-family: 'MontserratLG';
-    font-size: 0.6em;
-    color: grey;
 }

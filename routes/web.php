@@ -34,6 +34,8 @@ Route::get('/themas/{thema_id}', [ThemaController::class, 'index']);
 Route::get('/themas/{thema_id}/new-task', [TaskController::class, 'newTask']);
 
 Route::post('/courses/{classcode}', [CourseController::class, 'createThema']);
+Route::post('/courses/{course_id}/setthemaaccess', [CourseController::class, 'setThemaAccess']);
+Route::post('/classes/{classcode}/changecourse', [ClassController::class, 'changeCourse']);
 
 Route::get('/test', [ClassController::class, 'test']);
 

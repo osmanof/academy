@@ -7,9 +7,10 @@ function authenticate(email, password, afterCallback) {
         headers: {
             'X-CSRF-TOKEN': token
         },
-        url: "/student/register/checkcode",
+        url: "/login",
         data: {
-            code: code
+            email: email,
+            password: password
         },
         method: 'POST',
         dataType: 'json',

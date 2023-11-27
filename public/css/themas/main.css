@@ -1,0 +1,15 @@
+@import url("../themas.css");
+
+
+.thema-info__ta {
+    width: 60%;
+}
+
+.thema {
+    display: block;
+}
+
+.thema-info__block {
+    width: auto;
+}
+
