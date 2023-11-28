@@ -20,7 +20,7 @@
             </div>
             <div class="user">
                 <div class="user__name">
-                    {{ $user->name }} {{ $user->lastname }}
+                    {{ $user->name }} {{ $user->surname }}
                 </div>
             </div>
         </div>

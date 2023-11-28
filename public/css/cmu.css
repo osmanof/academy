@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'CMU-R';
+    src: url('../../fonts/CMU/cmunrm.ttf');
+}
+
+@font-face {
+    font-family: 'CMU-I';
+    src: url('../../fonts/CMU/cmunti.ttf');
+}
+
+@font-face {
+    font-family: 'CMU-B';
+    src: url('../../fonts/CMU/cmunbx.ttf');
+}
+
+@font-face {
+    font-family: 'CMU-BI';
+    src: url('../../fonts/CMU/cmunbi.ttf');
+}

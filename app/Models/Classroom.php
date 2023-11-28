@@ -13,6 +13,7 @@ class Classroom extends Model
         'title',
         'tutor',
         'tutor_id',
+        'course_id',
         'code'
     ];
 }

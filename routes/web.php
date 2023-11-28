@@ -29,10 +29,12 @@ Route::post('/classes', [ClassController::class, 'createClass']) -> name("cclass
 
 Route::get('/classes/{classcode}', [ClassController::class, 'class']);
 Route::get('/courses/{course_id}', [CourseController::class, 'course']);
+Route::get('/tasks/{task_id}', [TaskController::class, 'task']);
 
 Route::get('/themas/{thema_id}', [ThemaController::class, 'index']);
 Route::get('/themas/{thema_id}/new-task', [TaskController::class, 'newTask']);
 
+Route::post('/tasks/{task_id}/sendsolution', [TaskController::class, 'sendSolution']);
 Route::post('/courses/{classcode}', [CourseController::class, 'createThema']);
 Route::post('/courses/{course_id}/setthemaaccess', [CourseController::class, 'setThemaAccess']);
 Route::post('/classes/{classcode}/changecourse', [ClassController::class, 'changeCourse']);

@@ -103,6 +103,20 @@ function themaButtonHandler() {
     }
 }
 
+function taskButtonHandler() {
+    const buttons = $(".task-info__block");
+
+    for (let index = 0; index < buttons.length; index++) {
+        const element = $(buttons[index]);
+        const id = element.attr("data-id");
+        console.log(element);
+
+        element.click(function () {
+            window.location.href = "/tasks/" + id;
+        });
+    }
+}
+
 function lockButtonHandler() {
     const buttons = $(".thema-lock__block");
 
@@ -149,7 +163,22 @@ function setCourseSelectHandler(action) {
     });
 }
 
+function sendSolutionButtonHandler(action) {
+    const textarea = $("#code");
+    const button = $(".send-solution__button");
+    const header = $(".code-file__block__header");
+
+    button.click(function () {
+        action();
+        header.removeClass("error");
+        header.removeClass("success");
+        header.addClass("checking");
+        header.html("На проверке");
+    });
+}
+
 export {
+    taskButtonHandler,
     lockButtonHandler,
     themaButtonHandler,
     clickButtonHandler,
@@ -160,6 +189,7 @@ export {
     clickTaskButtonHandler,
     colorBlockButtonHandler,
     clickCloseButtonHandler,
+    sendSolutionButtonHandler,
     generateCodeButtonHandler,
     createCourseButtonHandler,
     clickCreateThemaButtonHandler,

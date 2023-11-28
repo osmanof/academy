@@ -1,0 +1,35 @@
+@import url("../cmu.css");
+
+
+.task__sections {
+    display: grid;
+    gap: 38px;
+}
+
+.section__title {
+    font-family: "MontserratMD";
+    font-size: 1.6em;
+}
+
+.task__section {
+    display: grid;
+    gap: 12px;
+}
+
+.task-text__block {
+    font-family: "CMU-R";
+    font-size: 1.2em;
+}
+
+.task-text__block i {
+    font-family: "CMU-I";
+}
+
+.task-text__block b {
+    font-family: "CMU-B";
+}
+
+.task-text__block b i, .task-text__block i b {
+    font-family: "CMU-BI";
+}
+

@@ -50,6 +50,7 @@ class ClassController extends Controller
             'title' => $request->title,
             'tutor' => $request->tutor,
             'tutor_id' => $user->id,
+            'course_id' => 0,
             'code' => $code
         ]);
         return json_encode([

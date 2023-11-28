@@ -9,7 +9,7 @@
 @endsection
 
 @section('scripts')
-<script src="/js/auth/indexStudent.js" type="module"></script>
+<script src="/js/themas/index.js" type="module"></script>
 @endsection
 
 @section('ctitle')
