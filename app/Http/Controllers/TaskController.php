@@ -22,7 +22,7 @@ function checkCode(string $code, int $task_id) {
 class TaskController extends Controller
 {
     public function test() {
-        $ssh = new \phpseclib3\Net\SSH2(env("TCS_HOST"));
+        $ssh = new \phpseclib3\Net\SSH2(env("TCS_HOST"),env("TCS_PORT"));
         if (!$ssh->login(env("TCS_USER"), env("TCS_PASSWORD"))) {
             exit('Login Failed');
         }
