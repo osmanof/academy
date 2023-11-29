@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 function checkCode(string $code, int $task_id) {
     $token = strval(rand(100000000000, 999999999999));
-    $path = "../tcs/". $token .".py";
+    $path = "../cfiles/". $token .".py";
 
     file_put_contents($path, $code);
 
