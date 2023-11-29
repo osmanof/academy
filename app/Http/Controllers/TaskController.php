@@ -21,6 +21,15 @@ function checkCode(string $code, int $task_id) {
 
 class TaskController extends Controller
 {
+    public function test() {
+        $ssh = new \phpseclib3\Net\SSH2(env("TCS_HOST"));
+        if (!$ssh->login(env("TCS_USER"), env("TCS_PASSWORD"))) {
+            exit('Login Failed');
+        }
+        
+        return $ssh->exec('ls');
+    }
+
     public function newTask(string $thema_id) {
         $user = Auth::user();
         $thema = DB::table("themas")->where("id", $thema_id)->first();
