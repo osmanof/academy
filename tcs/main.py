@@ -5,7 +5,7 @@ import random
 import subprocess
 
 
-TCS_FILES_PATH = "../tcs/tcs_files"
+TCS_FILES_PATH = "tcs_files"
 
 
 class TCSystem:

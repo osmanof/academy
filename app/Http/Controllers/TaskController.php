@@ -19,15 +19,29 @@ function checkCode(string $code, int $task_id) {
     return $result;
 }
 
-class TaskController extends Controller
+function runTCSScript($script, $test_cases)
 {
-    public function test() {
-        $ssh = new \phpseclib3\Net\SSH2(env("TCS_HOST"),env("TCS_PORT"));
+    $tcs_host = env("TCS_HOST");
+    $dir = env('APP_DIR') . '/tcs';
+    if (!empty($tcs_host)) {
+        $ssh = new \phpseclib3\Net\SSH2(env("TCS_HOST"), env("TCS_PORT"));
+
         if (!$ssh->login(env("TCS_USER"), env("TCS_PASSWORD"))) {
             exit('Login Failed');
         }
         
-        return $ssh->exec('ls');
+        return $ssh->exec('cd '.$dir.' && ~/.local/bin/python3 main.py '.$script.' '.$test_cases);
+    } else {
+        return shell_exec('cd '.$dir.' && python3 main.py '.$script.' '.$test_cases);
+    }
+}
+
+
+
+class TaskController extends Controller
+{
+    public function test() {
+        return runTCSScript('624799574502.py', '3.json');
     }
 
     public function newTask(string $thema_id) {
