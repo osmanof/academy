@@ -38,7 +38,7 @@ class TaskController extends Controller
         }
     }
 
-    public function task(string $task_id) {
+    public function task(string $task_id)  {
         $user = Auth::user();
 
         $task = DB::table("tasks")->where("id", "=", $task_id)->first();
