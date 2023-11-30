@@ -48,7 +48,7 @@ function checkCode(string $code, int $task_id) {
     $name = $token . ".py";
 
 
-    return $dir . '/' . $name . '   ' . $code;
+    $dir . '/' . $name . '   ' . $code;
     file_put_contents($dir . '/' . $name, $code);
 
     // $raw_result = runTCS($name, $task_id.".json");
