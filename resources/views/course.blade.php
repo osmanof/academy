@@ -54,10 +54,10 @@
                 <div class="thema-info__number">'. ($key + 1) .'</div>
                 <div class="thema-info__ta">
                     <div class="thema-info__title">'. $title .'</div>
-                    <div class="thema-info__amount">Количество задач: 11</div>
+                    <div class="thema-info__amount">Количество задач: 3</div>
                 </div>
                 <div class="thema-info__rd">
-                    <div class="thema-info__rating">43%</div>
+                    <div class="thema-info__rating">0%</div>
                     <div class="thema-info__deadline">Дедлайн: '. $day .'.'. $month .'.'. $year .' '. $time .'</div>
                 </div>
             </div>
