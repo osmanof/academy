@@ -39,6 +39,19 @@ class ThemaController extends Controller
         $home_tasks = DB::table("tasks")->where("thema_id","=", $id)->where("type", "=", 1)->get();
         $hard_tasks = DB::table("tasks")->where("thema_id","=", $id)->where("type", "=", 2)->get();
         
+        $tasks = DB::table("tasks")->where("thema_id","=", $id)->get();
+        $solved_array = [];
+
+
+        foreach ($tasks as $task) {
+            $task_id = $task->id;
+            $solved = DB::table("solutions")->where("task_id", "=", $task_id)->where("status", "=", "200")->exists();
+
+            if ($solved) {
+                $solved_array[] = $task_id;
+            }
+        }
+
         if ($role) {
             return view("student.thema", [
                 "user" => $user,
@@ -46,7 +59,8 @@ class ThemaController extends Controller
                 "count_text" => $count_text,
                 "class_tasks" => $class_tasks,
                 "home_tasks" => $home_tasks,
-                "hard_tasks" => $hard_tasks
+                "hard_tasks" => $hard_tasks,
+                "solved_array" => $solved_array
             ]);
         } else {
             return view("thema", [

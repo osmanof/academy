@@ -37,7 +37,7 @@
                         <div class="card__info__class-data__students">Учеников: <span>'. $_count .'</span></div>
                     </div>
                     <div class="card__info__class-info">
-                        <div class="card__info__class-info__score">Средняя успеваемость: <span>100%</span></div>
+                        <div class="card__info__class-info__score">Средняя успеваемость: <span>0%</span></div>
                         <div class="card__info__class-info__tutor">Кл. руководитель: <span>'.$value->tutor.'</span></div>
                     </div>
                 </div>
