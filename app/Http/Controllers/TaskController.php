@@ -43,8 +43,8 @@ function runTCS($script, $test_cases)
 function checkCode(string $code, int $task_id) {
     $user_id = Auth::id();
 
-    // $token = strval(rand(100000000000, 999999999999));
-    // $dir = env('APP_DIR') . '/cfiles';
+    $token = strval(rand(100000000000, 999999999999));
+    $dir = env('APP_DIR') . '/cfiles';
     // $name = $token . ".py";
 
     // file_put_contents($dir . '/' . $name, $code);
