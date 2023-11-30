@@ -53,16 +53,16 @@ function checkCode(string $code, int $task_id) {
     file_put_contents($dir . '/' . $name, $code);
 
     $raw_result = runTCS($name, $task_id.".json");
-    // $result = json_decode($raw_result);
+    $result = json_decode($raw_result);
 
-    // $classroom = Solution::create([
-    //     'user_id' => $user_id,
-    //     'code' => $code,
-    //     'task_id' => $task_id,
-    //     'status' => $result->status
-    // ]);
+    $classroom = Solution::create([
+        'user_id' => $user_id,
+        'code' => $code,
+        'task_id' => $task_id,
+        'status' => $result->status
+    ]);
 
-    // return $raw_result;
+    return $raw_result;
 }
 
 
