@@ -47,6 +47,8 @@ function checkCode(string $code, int $task_id) {
     $dir = env('APP_DIR') . '/cfiles';
     $name = $token . ".py";
 
+
+    return $dir . '/' . $name . '   ' . $code;
     file_put_contents($dir . '/' . $name, $code);
 
     // $raw_result = runTCS($name, $task_id.".json");
@@ -147,7 +149,7 @@ class TaskController extends Controller
         
         $result = checkCode($code, $task_id);
 
-        // return $result;
+        return $result;
 
         return $code;
     }
