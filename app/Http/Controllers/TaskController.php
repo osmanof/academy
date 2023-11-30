@@ -45,9 +45,9 @@ function checkCode(string $code, int $task_id) {
 
     $token = strval(rand(100000000000, 999999999999));
     $dir = env('APP_DIR') . '/cfiles';
-    // $name = $token . ".py";
+    $name = $token . ".py";
 
-    // file_put_contents($dir . '/' . $name, $code);
+    file_put_contents($dir . '/' . $name, $code);
 
     // $raw_result = runTCS($name, $task_id.".json");
     // $result = json_decode($raw_result);
