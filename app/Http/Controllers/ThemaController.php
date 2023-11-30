@@ -42,7 +42,6 @@ class ThemaController extends Controller
         $tasks = DB::table("tasks")->where("thema_id","=", $id)->get();
         $solved_array = [];
 
-
         foreach ($tasks as $task) {
             $task_id = $task->id;
             $solved = DB::table("solutions")->where("task_id", "=", $task_id)->where("status", "=", "200")->exists();
