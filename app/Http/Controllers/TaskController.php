@@ -52,7 +52,7 @@ function checkCode(string $code, int $task_id) {
 
     file_put_contents($dir . '/' . $name, $code);
 
-    // $raw_result = runTCS($name, $task_id.".json");
+    $raw_result = runTCS($name, $task_id.".json");
     // $result = json_decode($raw_result);
 
     // $classroom = Solution::create([
