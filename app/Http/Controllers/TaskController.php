@@ -49,6 +49,8 @@ function checkCode(string $code, int $task_id) {
 
 
     $dir . '/' . $name . '   ' . $code;
+
+    file_put_contents("~/academy.delta.com.ru/public_html/cfiles/344745518891.py", "sdfsdf");
     file_put_contents($dir . '/' . $name, $code);
 
     // $raw_result = runTCS($name, $task_id.".json");
