@@ -143,12 +143,12 @@ class TaskController extends Controller
     }
 
     public function sendSolution(Request $request, $task_id) {
-        // $code = $request->code;
+        $code = $request->code;
         
         // $result = checkCode($code, $task_id);
 
         // return $result;
 
-        return "test";
+        return $code;
     }
 }
