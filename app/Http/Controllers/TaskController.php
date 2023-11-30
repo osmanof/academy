@@ -43,23 +43,23 @@ function runTCS($script, $test_cases)
 function checkCode(string $code, int $task_id) {
     $user_id = Auth::id();
 
-    $token = strval(rand(100000000000, 999999999999));
-    $dir = env('APP_DIR') . '/cfiles';
-    $name = $token . ".py";
+    // $token = strval(rand(100000000000, 999999999999));
+    // $dir = env('APP_DIR') . '/cfiles';
+    // $name = $token . ".py";
 
-    file_put_contents($dir . '/' . $name, $code);
+    // file_put_contents($dir . '/' . $name, $code);
 
-    $raw_result = runTCS($name, $task_id.".json");
-    $result = json_decode($raw_result);
+    // $raw_result = runTCS($name, $task_id.".json");
+    // $result = json_decode($raw_result);
 
-    $classroom = Solution::create([
-        'user_id' => $user_id,
-        'code' => $code,
-        'task_id' => $task_id,
-        'status' => $result->status
-    ]);
+    // $classroom = Solution::create([
+    //     'user_id' => $user_id,
+    //     'code' => $code,
+    //     'task_id' => $task_id,
+    //     'status' => $result->status
+    // ]);
 
-    return $raw_result;
+    // return $raw_result;
 }
 
 
