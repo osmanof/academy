@@ -49,7 +49,7 @@ function checkCode(string $code, int $task_id) {
 
     file_put_contents($dir . '/' . $name, $code);
 
-    $raw_result = runTCS($name, $task_id.".json");
+    //$raw_result = runTCS($name, $task_id.".json");
     $result = json_decode($raw_result);
 
     $classroom = Solution::create([
@@ -69,9 +69,6 @@ function checkCode(string $code, int $task_id) {
 
 class TaskController extends Controller
 {
-    public function test() {
-        return runTCSScript('624799574502.py', '3.json');
-    }
 
     public function newTask(string $thema_id) {
         $user = Auth::user();
