@@ -34,12 +34,14 @@ Route::get('/tasks/{task_id}', [TaskController::class, 'task']);
 Route::get('/themas/{thema_id}', [ThemaController::class, 'index']);
 Route::get('/themas/{thema_id}/new-task', [TaskController::class, 'newTask']);
 
+Route::get("/test", [TaskController::class, "test"]);
+
 Route::post('/tasks/{task_id}/sendsolution', [TaskController::class, 'sendSolution']);
 Route::post('/courses/{classcode}', [CourseController::class, 'createThema']);
 Route::post('/courses/{course_id}/setthemaaccess', [CourseController::class, 'setThemaAccess']);
 Route::post('/classes/{classcode}/changecourse', [ClassController::class, 'changeCourse']);
 
-Route::get('/test', [ClassController::class, 'test']);
+Route::get('/tes', [ClassController::class, 'test']);
 
 // Route::get('/classes/{classcode}', function (string $ccode) {
 //     $class = DB::table('classrooms')->where('code', '=', $ccode)->first();

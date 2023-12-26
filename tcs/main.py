@@ -5,7 +5,7 @@ import random
 import subprocess
 
 
-TCS_FILES_PATH = "../tcs/tcs_files"
+TCS_FILES_PATH = "tcs_files"
 
 
 class TCSystem:
@@ -44,6 +44,8 @@ class TCSystem:
                 proc.wait(timeout=timelimit)
                 output = process.communicate()[0].decode()
 
+                self.__user_output = output
+
                 return output == stdout
 
             except subprocess.TimeoutExpired:
@@ -70,6 +72,9 @@ class TCSystem:
             if not result:
                 errors = {
                     "case_num": case_num,
+                    "stdin": stdin,
+                    "user_output": self.__user_output,
+                    "exp_output": stdout,
                     "status": 300 if result is None else 500,
                 }
 
@@ -80,10 +85,7 @@ class TCSystem:
 
 if __name__ == "__main__":
     args = sys.argv
-
-    with open("hey", "w") as f:
-        f.write("hey")
-
+    
     if len(args) > 2:
         filename, testcases = args[1], args[2]
 
